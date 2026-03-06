@@ -7,7 +7,7 @@ router.get('/', getRooms);
 router.get('/stats', protect, staffOrAdmin, getRoomStats);
 router.get('/:id', getRoom);
 router.post('/', protect, adminOnly, createRoom);
-router.put('/:id', protect, adminOnly, updateRoom);
+router.put('/:id', staffOrAdmin, updateRoom);
 router.delete('/:id', protect, adminOnly, deleteRoom);
 
 module.exports = router;
